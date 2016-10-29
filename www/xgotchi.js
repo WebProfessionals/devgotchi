@@ -7,6 +7,7 @@ requirejs.config({
   baseUrl: 'lib',
   paths: {
     xgotchi: '../xgotchi'
+
   }
 });
 
