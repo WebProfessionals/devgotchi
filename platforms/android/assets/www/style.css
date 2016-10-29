@@ -1,0 +1,97 @@
+html, body {
+    background: linear-gradient(to bottom, rgba(168, 198, 20, 1) 0%, rgba(168, 198, 20, 1) 50%, rgba(126, 13, 4, 1) 50%, rgba(126, 12, 4, 1) 100%);
+    margin: 0;
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'PT Mono', monospace;
+}
+
+h1 {
+    color: #fff;
+    font-size: 37px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 7.7px;
+    text-transform: uppercase;
+    margin: 20px 0 0;
+}
+
+p {
+    font-size: 22px;
+    letter-spacing: 0.92px;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+.link {
+    text-align: center;
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+}
+
+a {
+    font-size: 16px;
+    color: #fff;
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+.pixel {
+    height: 16px;
+    width: 16px;
+    background-color: #71877A;
+    float: left;
+    box-shadow: inset 0px 0px 6px 6px rgba(0, 0, 0, .2);
+}
+
+.pixel[data-state="1"] {
+    background-color: #000;
+}
+
+.pixel[data-state="2"] {
+    background-color: #222;
+}
+
+.pixel[data-state="3"] {
+    background-color: #3a3a3a;
+}
+
+.pixel:nth-child(16n + 1) {
+    clear: left;
+}
+
+.screen-wrapper {
+    width: 256px;
+    height: 256px;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.screen {
+    box-shadow: inset 0px 0px 6px 6px rgba(0, 0, 0, .5);
+}
+
+.noise {
+    background: transparent url(noise.png) no-repeat 0 0;
+    position: absolute;
+    width: 256px;
+    height: 256px;
+}
+
+.border {
+    background: transparent url(border.png) no-repeat 0 0;
+    position: absolute;
+    width: 344px;
+    height: 363px;
+    left: -43px;
+    top: -57px;
+}
