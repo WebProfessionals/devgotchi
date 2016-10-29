@@ -5,7 +5,6 @@ define([
         tickCount = 0,
         ticksPerFrame = 4,
         numberOfFrames = 2,
-        currentState = 'neutral',
         currentEvent = 'idle';
 
     var animationLoop = function() {
@@ -18,10 +17,10 @@ define([
     var update = function() {
         tickCount += 1;
 
-        if (tickCount > animation[currentState][currentEvent].speed) {
+        if (tickCount > animation[state.gotchi.mood][currentEvent].speed) {
             tickCount = 0;
 
-            if (frameIndex < animation[currentState][currentEvent].frames.length - 1) {
+            if (frameIndex < animation[state.gotchi.mood][currentEvent].frames.length - 1) {
                 frameIndex += 1;
             } else {
                 frameIndex = 0;
@@ -30,7 +29,7 @@ define([
     };
 
     var render = function(string) {
-        var saveArray = animation[currentState][currentEvent].frames[frameIndex].split(','),
+        var saveArray = animation[state.gotchi.mood][currentEvent].frames[frameIndex].split(','),
             pixels = document.querySelectorAll('.pixel');
 
         for (var i = 0, len = pixels.length; i < len; i++) {
@@ -55,7 +54,7 @@ define([
 
     // Stateveränderung
     var stateChangeHandle = state.registerStateChangeCallback(function(e, d) {
-        console.log(e);
+        console.log(d);
     });
     // stateChangeHandle.unRegister();
 

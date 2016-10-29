@@ -7,7 +7,7 @@ To start the "server" in dev mode run
 
 To optimize, run:
 
-    node tools/r.js -o tools/build.js
+    node tools/r.js -o tools/build.json
     
 To run optimized variant
     

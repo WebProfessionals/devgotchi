@@ -3,11 +3,12 @@ define(function () {
   var x = 1;
 
   var gotchi = {
-    sanity: 0.5,
+    sanity: 0.3,
     fear: 0,
     love: 0,
     food: 0.5,
-    horizont: 0.5
+    horizont: 0.5,
+    mood:'neutral'
   };
 
   setInterval(function () {
