@@ -17,6 +17,12 @@ define(['pubsub', './state','./sensorik/angst'], function (pubsub, state, angstv
     for(sensor in sensorik){
       sensorik[sensor].zeitdelta(state)
     }
+
+    // mood berechnen
+    var gotchiStates = ['dead', 'sad', 'neutral','happy', 'imortal'];
+
+    state.gotchi.mood = gotchiStates[1];
+
   },650);
 
 
