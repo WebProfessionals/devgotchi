@@ -7,8 +7,6 @@ define(['pubsub'], function (pubsub) {
       pubsub.publish('uebelkeit', 1);
     }
 
-
-
   });
 
 
