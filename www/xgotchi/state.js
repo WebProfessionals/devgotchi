@@ -27,7 +27,7 @@ define(function () {
      * @param callback
      */
     registerStateChangeCallback: function registerStateChangeCallback(callback) {
-      var index = _callback.push(callback) -1;
+      var index = _callback.push(callback) - 1;
 
       return {
         unRegister: function () {
@@ -42,6 +42,7 @@ define(function () {
     getSanity: function () {
       return gotchi.sanity;
     }
+    , gotchi: gotchi
   };
 
 
