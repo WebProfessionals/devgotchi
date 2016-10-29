@@ -55,7 +55,7 @@ define([
 
     // Stateveränderung
     var stateChangeHandle = state.registerStateChangeCallback(function(e, d) {
-        console.log(e, d);
+        console.log(e);
     });
     // stateChangeHandle.unRegister();
 
