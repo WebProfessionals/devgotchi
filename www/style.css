@@ -2,7 +2,14 @@ html, body {
     background: linear-gradient(to bottom, rgba(168, 198, 20, 1) 0%, rgba(168, 198, 20, 1) 50%, rgba(126, 13, 4, 1) 50%, rgba(126, 12, 4, 1) 100%);
     margin: 0;
     height: 100vh;
+    position: fixed;
+    width: 100vw;
     overflow: hidden;
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
 }
 
 .pixel {
@@ -33,7 +40,8 @@ html, body {
     overflow: hidden;
     width: 256px;
     height: 256px;
-    margin: 50% auto 0;
+    margin: 50vh auto 0;
+    transform: translateY(-128px);
     position: relative;
 }
 

@@ -3,9 +3,10 @@ define([
 ], function(pubsub, state, animation) {
     var frameIndex = 0,
         tickCount = 0,
-        ticksPerFrame = 16,
+        ticksPerFrame = 4,
         numberOfFrames = 2,
-        currentState = 'neutral';
+        currentState = 'neutral',
+        currentEvent = 'idle';
 
     var animationLoop = function() {
         window.requestAnimationFrame(animationLoop);
@@ -17,10 +18,10 @@ define([
     var update = function() {
         tickCount += 1;
 
-        if (tickCount > ticksPerFrame) {
+        if (tickCount > animation[currentState][currentEvent].speed) {
             tickCount = 0;
 
-            if (frameIndex < numberOfFrames - 1) {
+            if (frameIndex < animation[currentState][currentEvent].frames.length - 1) {
                 frameIndex += 1;
             } else {
                 frameIndex = 0;
@@ -29,7 +30,7 @@ define([
     };
 
     var render = function(string) {
-        var saveArray = animation[currentState].idle.frames[frameIndex].split(','),
+        var saveArray = animation[currentState][currentEvent].frames[frameIndex].split(','),
             pixels = document.querySelectorAll('.pixel');
 
         for (var i = 0, len = pixels.length; i < len; i++) {
@@ -42,13 +43,15 @@ define([
         }
     };
 
-    // Events
-    var eventCode = function(event, data) {
-        console.log(event);
-    };
-
-    var uiEvents = pubsub.subscribe('ui', eventCode);
     //pubsub.unsubscribe(uiEvents);
+
+    pubsub.subscribe('angst', function() {
+        currentEvent = 'press';
+    });
+
+    pubsub.subscribe('idle', function() {
+        currentEvent = 'idle';
+    });
 
     // Stateveränderung
     var stateChangeHandle = state.registerStateChangeCallback(function(e, d) {
@@ -57,6 +60,7 @@ define([
     // stateChangeHandle.unRegister();
 
     var reset = function() {};
+
     return {
         reset: reset,
         animationLoop: animationLoop
