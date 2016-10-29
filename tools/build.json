@@ -1,0 +1,10 @@
+{
+    "appDir": "../www",
+    "mainConfigFile": "../www/xgotchi.js",
+    "dir": "../build",
+    "modules": [
+        {
+            "name": "xgotchi"
+        }
+    ]
+}

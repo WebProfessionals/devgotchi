@@ -1,24 +1,23 @@
-define(['./messages','./state'],function (message,state) {
+define(['pubsub', './state'], function (pubsub, state) {
+
+  // Events
+  var eventCode = function (event, data) {
+    console.log(event);
+  };
+
+  var uiEvents = pubsub.subscribe('ui', eventCode);
+  //pubsub.unsubscribe(uiEvents);
 
 
-
+  // Stateveränderung
   var stateChangeHandle = state.registerStateChangeCallback(function (e, d) {
     console.log(e, d);
   });
-
-  stateChangeHandle.unRegister();
-
+  // stateChangeHandle.unRegister();
 
 
+  var reset = function () {
 
-  var element = document.getElementById('x');
-
-  element.addEventListener('click', function () {
-    console.dir(state.getSanity());
-  });
-
-  var ready = function () {
-    console.dir(message.getHello());
   };
-  return {ready: ready};
+  return {reset: reset};
 });
