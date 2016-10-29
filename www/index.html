@@ -1,12 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>x-gotchi</title>
-  <script data-main="xgotchi" src="lib/require.js"></script>
-<button id="x">X</button>
-</head>
-<body>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>x-gotchi</title>
+    <script data-main="xgotchi" src="lib/require.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button id="x">X</button>
+
+    <div class="screen-wrapper">
+        <div class="noise"></div>
+        <div class="screen">
+            <div class="pixel" data-x="0" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="0" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="1" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="2" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="3" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="4" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="5" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="6" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="7" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="8" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="9" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="10" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="11" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="12" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="13" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="14" data-state="0"></div>
+            <div class="pixel" data-x="0" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="1" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="2" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="3" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="4" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="5" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="6" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="7" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="8" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="9" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="10" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="11" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="12" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="13" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="14" data-y="15" data-state="0"></div>
+            <div class="pixel" data-x="15" data-y="15" data-state="0"></div>
+        </div>
+    </div>
 </body>
+
 </html>

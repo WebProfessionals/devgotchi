@@ -1,0 +1,49 @@
+html, body {
+    background: linear-gradient(to bottom, rgba(168, 198, 20, 1) 0%, rgba(168, 198, 20, 1) 50%, rgba(126, 13, 4, 1) 50%, rgba(126, 12, 4, 1) 100%);
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.pixel {
+    height: 16px;
+    width: 16px;
+    background-color: #71877A;
+    float: left;
+    box-shadow: inset 0px 0px 6px 6px rgba(0, 0, 0, .2);
+}
+
+.pixel[data-state="1"] {
+    background-color: #000;
+}
+
+.pixel[data-state="2"] {
+    background-color: #222;
+}
+
+.pixel[data-state="3"] {
+    background-color: #3a3a3a;
+}
+
+.pixel:nth-child(16n + 1) {
+    clear: left;
+}
+
+.screen-wrapper {
+    overflow: hidden;
+    width: 256px;
+    height: 256px;
+    margin: 50% auto 0;
+    position: relative;
+}
+
+.screen {
+    box-shadow: inset 0px 0px 6px 6px rgba(0, 0, 0, .5);
+}
+
+.noise {
+    background: transparent url(noise.png) no-repeat 0 0;
+    position: absolute;
+    width: 256px;
+    height: 256px;
+}
