@@ -5,6 +5,9 @@ define(function (require) {
     'trigger': function (state, input) {
       if (state.gotchi.fear < 1) {
         state.gotchi.fear += (input  * angst.aengstlichkeit);
+        if (state.gotchi.fear > 1) {
+          state.gotchi.fear = 1;
+        }
       }
     },
     'zeitdelta': function (state) {
@@ -16,8 +19,8 @@ define(function (require) {
 
       }
     },
-    abbaurate: 0.04,
-    aengstlichkeit: 0.5
+    abbaurate: 0.03,
+    aengstlichkeit: 0.3
   };
 
   return angst

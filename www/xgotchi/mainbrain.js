@@ -1,5 +1,8 @@
 define(['pubsub', './state','./sensorik/angst'], function (pubsub, state, angstverarbeitung) {
 
+
+
+
   // Sensorik
   var sensorik = {'angst':angstverarbeitung};
 
