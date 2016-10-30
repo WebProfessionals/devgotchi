@@ -64,7 +64,7 @@ define([
         currentEvent = 'shake';
         setTimeout(function () {
             currentEvent = 'idle';
-        },100);
+        },250);
     });
 
     pubsub.subscribe('idle', function() {
