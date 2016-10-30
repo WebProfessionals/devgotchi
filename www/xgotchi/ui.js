@@ -50,6 +50,9 @@ define([
 
     pubsub.subscribe('shake', function() {
         currentEvent = 'shake';
+        setTimeout(function () {
+            currentEvent = 'idle';
+        },100);
     });
 
     pubsub.subscribe('idle', function() {
