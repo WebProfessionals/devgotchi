@@ -10,6 +10,5 @@ define(['pubsub'], function (pubsub) {
   });
 
   var angst ={};
-
   return angst;
 });

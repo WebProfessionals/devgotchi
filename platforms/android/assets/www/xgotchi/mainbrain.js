@@ -32,7 +32,7 @@ define(['pubsub', './state', './reaktion/angst', './reaktion/uebelkeit'],
         state.gotchi.health += 0.003;
 
 
-        if (state.gotchi.health < 0.05) {
+        if (state.gotchi.health < 0) {
           state.gotchi.mood = gotchiStates[0];
           clearInterval(loop);
         }

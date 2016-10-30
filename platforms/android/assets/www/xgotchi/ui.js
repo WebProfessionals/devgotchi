@@ -49,7 +49,7 @@ define([
             progressBar[i].setAttribute('data-state', 3);
         }
 
-        for(var i= 0, len = progressBar.length; i < 2; i++) {
+        for(var i= 0, len = progressBar.length; i < Math.ceil(state.gotchi.health * 16); i++) {
             progressBar[i].setAttribute('data-state', 1);
         }
     };
@@ -64,7 +64,7 @@ define([
         currentEvent = 'shake';
         setTimeout(function () {
             currentEvent = 'idle';
-        },100);
+        },250);
     });
 
     pubsub.subscribe('idle', function() {

@@ -9,7 +9,7 @@ define(function (require) {
           state.gotchi.sickness = 1;
         }
         if (state.gotchi.sickness > 0.02) {
-          navigator.vibrate(1000);
+          navigator.vibrate(100);
         }
       }
     },
