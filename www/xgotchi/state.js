@@ -3,7 +3,7 @@ define(function () {
   var x = 1;
 
   var gotchi = {
-    health: 0.1,
+    health: 0.08,
     fear: 0,
     sickness:0,
     love: 0,
