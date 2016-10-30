@@ -1,23 +1,19 @@
+// reaktionen einhängen
 define(['pubsub', './state', './reaktion/angst', './reaktion/uebelkeit'],
     function (pubsub, state, angstverarbeitung, uebelkeit) {
-
-
 
 
       // Sensorik registrieren
       var reaktion = {'angst': angstverarbeitung, 'uebelkeit': uebelkeit};
 
 
-      // quetschen ==> angst
-      pubsub.subscribe('angst', function (event, data) {
-        reaktion[event].trigger(state, data);
-      });
+      // registrierte sensorik subscriben
+      for(var emotion  in reaktion){
+        pubsub.subscribe(emotion, function (event, intensitaet) {
+          reaktion[event].trigger(state, intensitaet);
+        });
+      }
 
-      // schuetteln ==> übelkeit
-      pubsub.subscribe('uebelkeit', function (event, data) {
-        console.log(event);
-        reaktion[event].trigger(state, data);
-      });
 
 
       var gameloop = function () {
