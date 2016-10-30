@@ -4,7 +4,7 @@ define(function (require) {
   var uebelkeit = {
     'trigger': function (state, input) {
       if (state.gotchi.sickness < 1) {
-        state.gotchi.sickness += (input  * uebelkeit.aengstlichkeit);
+        state.gotchi.sickness += (input  * uebelkeit.empfindilichkeit);
         if (state.gotchi.sickness > 1) {
           state.gotchi.sickness = 1;
         }
