@@ -13,6 +13,7 @@ define(['pubsub', './state', './reaktion/angst', './reaktion/uebelkeit'],
         reaktion[event].trigger(state, data);
       });
 
+      // schuetteln ==> übelkeit
       pubsub.subscribe('uebelkeit', function (event, data) {
         console.log(event);
         reaktion[event].trigger(state, data);
