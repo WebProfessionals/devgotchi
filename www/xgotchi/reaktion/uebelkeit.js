@@ -8,6 +8,9 @@ define(function (require) {
         if (state.gotchi.sickness > 1) {
           state.gotchi.sickness = 1;
         }
+        if (state.gotchi.sickness > 0.2) {
+          navigator.vibrate(1000);
+        }
       }
     },
     'zeitdelta': function (state) {

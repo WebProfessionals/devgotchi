@@ -3,7 +3,7 @@ define(['pubsub'], function (pubsub) {
 
   window.addEventListener("devicemotion", function (data) {
 
-    if(data.acceleration.x >1){
+    if(data.acceleration.x >2){
       pubsub.publish('uebelkeit', 1);
       pubsub.publish('shake',1);
     }
