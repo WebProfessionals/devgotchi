@@ -5,6 +5,7 @@ define(function () {
   var gotchi = {
     health: 0.1,
     fear: 0,
+    sickness:0,
     love: 0,
     food: 0.5,
     horizont: 0.5,
