@@ -30,15 +30,27 @@ define([
 
     var render = function(string) {
         var saveArray = animation[state.gotchi.mood][currentEvent].frames[frameIndex].split(','),
-            pixels = document.querySelectorAll('.pixel');
+            pixels = document.querySelectorAll('.pixel'),
+            progressBar = document.querySelectorAll('[data-y="15"]');
 
+        // reset screen
         for (var i = 0, len = pixels.length; i < len; i++) {
             pixels[i].setAttribute('data-state', 0);
         }
 
+        // draw pixels
         for(var i= 0, len = saveArray.length; i < len; i++) {
             var pixel = saveArray[i].split('|');
             document.querySelectorAll('[data-x="' + pixel[0] + '"][data-y="' + pixel[1] + '"]')[0].setAttribute('data-state', pixel[2]);
+        }
+
+        // draw progress bar
+        for(var i= 0, len = progressBar.length; i < len; i++) {
+            progressBar[i].setAttribute('data-state', 3);
+        }
+
+        for(var i= 0, len = progressBar.length; i < 2; i++) {
+            progressBar[i].setAttribute('data-state', 1);
         }
     };
 
