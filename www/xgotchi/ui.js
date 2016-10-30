@@ -48,6 +48,10 @@ define([
         currentEvent = 'press';
     });
 
+    pubsub.subscribe('shake', function() {
+        currentEvent = 'shake';
+    });
+
     pubsub.subscribe('idle', function() {
         currentEvent = 'idle';
     });
