@@ -12,6 +12,9 @@
         },
         "cordova-plugin-battery-status": {
             "PACKAGE_NAME": "devgotchi.techfabrik.com"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "devgotchi.techfabrik.com"
         }
     },
     "dependent_plugins": {}

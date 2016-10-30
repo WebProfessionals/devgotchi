@@ -3,24 +3,24 @@ define(function (require) {
 
   var uebelkeit = {
     'trigger': function (state, input) {
-      if (state.gotchi.fear < 1) {
-        state.gotchi.fear += (input  * uebelkeit.aengstlichkeit);
-        if (state.gotchi.fear > 1) {
-          state.gotchi.fear = 1;
+      if (state.gotchi.sickness < 1) {
+        state.gotchi.sickness += (input  * uebelkeit.aengstlichkeit);
+        if (state.gotchi.sickness > 1) {
+          state.gotchi.sickness = 1;
         }
       }
     },
     'zeitdelta': function (state) {
-      if (state.gotchi.fear > 0) {
-        state.gotchi.fear -= uebelkeit.abbaurate;
-        if(state.gotchi.fear < 0){
-          state.gotchi.fear = 0;
+      if (state.gotchi.sickness > 0) {
+        state.gotchi.sickness -= uebelkeit.abbaurate;
+        if(state.gotchi.sickness < 0){
+          state.gotchi.sickness = 0;
         }
       }
-      state.gotchi.health = state.gotchi.health - (state.gotchi.fear * 0.005);
+      state.gotchi.health = state.gotchi.health - (state.gotchi.sickness * 0.005);
     },
-    abbaurate: 0.03,
-    aengstlichkeit: 0.3
+    abbaurate: 0.01,
+    empfindilichkeit: 0.2
   };
 
   return uebelkeit;
