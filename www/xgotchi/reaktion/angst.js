@@ -16,8 +16,8 @@ define(function (require) {
         if(state.gotchi.fear < 0){
           state.gotchi.fear = 0;
         }
-
       }
+      state.gotchi.health = state.gotchi.health - (state.gotchi.fear * 0.005);
     },
     abbaurate: 0.03,
     aengstlichkeit: 0.3

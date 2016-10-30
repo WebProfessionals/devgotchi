@@ -1,37 +1,74 @@
-define(['pubsub', './state','./sensorik/angst'], function (pubsub, state, angstverarbeitung) {
+define(['pubsub', './state', './reaktion/angst', './reaktion/uebelkeit'],
+    function (pubsub, state, angstverarbeitung, uebelkeit) {
 
 
 
 
-  // Sensorik
-  var sensorik = {'angst':angstverarbeitung};
+      // Sensorik registrieren
+      var reaktion = {'angst': angstverarbeitung, 'uebelkeit': uebelkeit};
 
 
-  // Events
-  var eventCode = function (event, data) {
-    sensorik[event].trigger(state, data);
-  };
+      // quetschen ==> angst
+      pubsub.subscribe('angst', function (event, data) {
+        reaktion[event].trigger(state, data);
+      });
 
-  // Abbauen
-  setInterval(function () {
-    for(sensor in sensorik){
-      sensorik[sensor].zeitdelta(state)
-    }
-
-    // mood berechnen
-    var gotchiStates = ['dead', 'sad', 'neutral','happy', 'imortal'];
-
-    state.gotchi.mood = gotchiStates[1];
-
-  },650);
+      // schuetteln ==> übelkeit
+      pubsub.subscribe('uebelkeit', function (event, data) {
+        console.log(event);
+        reaktion[event].trigger(state, data);
+      });
 
 
-  var uiEvents = pubsub.subscribe('angst', eventCode);
-  //pubsub.unsubscribe(uiEvents);
+      var gameloop = function () {
+        for (sensor in reaktion) {
+          reaktion[sensor].zeitdelta(state)
+        }
+
+        // mood berechnen
+        var gotchiStates = ['dead', 'sad', 'neutral', 'happy', 'immortal'];
+
+        // state verbessern
+        state.gotchi.health += 0.003;
 
 
-  var reset = function () {
+        if (state.gotchi.health < 0.05) {
+          state.gotchi.mood = gotchiStates[0];
+          clearInterval(loop);
+        }
 
-  };
-  return {reset: reset};
-});
+
+        if (state.gotchi.health >= 0.05) {
+          state.gotchi.mood = gotchiStates[1];
+
+        }
+
+        if (state.gotchi.health >= 0.35) {
+          state.gotchi.mood = gotchiStates[2];
+
+        }
+
+        if (state.gotchi.health >= 0.55) {
+          state.gotchi.mood = gotchiStates[3];
+
+        }
+
+        if (state.gotchi.health >= 0.99) {
+          state.gotchi.mood = gotchiStates[4];
+          clearInterval(loop);
+        }
+
+        localStorage.setItem('health', state.gotchi.health);
+        console.log(state.gotchi.health)
+      };
+
+
+      // Starten
+      var loop = setInterval(gameloop, 650);
+
+
+      var reset = function () {
+
+      };
+      return {reset: reset};
+    });

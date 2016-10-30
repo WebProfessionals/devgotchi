@@ -3,23 +3,14 @@ define(function () {
   var x = 1;
 
   var gotchi = {
-    sanity: 0.3,
+    health: 0.1,
     fear: 0,
+    sickness:0,
     love: 0,
     food: 0.5,
     horizont: 0.5,
     mood:'neutral'
   };
-
-  setInterval(function () {
-    var event = 'gewechselt';
-    _callback.forEach(function (cb) {
-      cb(event, gotchi);
-    });
-
-    gotchi.sanity = (gotchi.sanity * 1) + 0.001;
-    localStorage.setItem('sanity', gotchi.sanity);
-  }, 2000);
 
 
   var state = {
@@ -40,8 +31,8 @@ define(function () {
 
       }
     },
-    getSanity: function () {
-      return gotchi.sanity;
+    gethealth: function () {
+      return gotchi.health;
     }
     , gotchi: gotchi
   };
