@@ -8,7 +8,7 @@ define(function (require) {
         if (state.gotchi.sickness > 1) {
           state.gotchi.sickness = 1;
         }
-        if (state.gotchi.sickness > 0.2) {
+        if (state.gotchi.sickness > 0.02) {
           navigator.vibrate(1000);
         }
       }
